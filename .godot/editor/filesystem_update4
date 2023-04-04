@@ -1,7 +1,11 @@
-res://scenes/game.tscn
-res://scenes/asteroid.tscn
-res://scripts/laser.gd
-res://scenes/laser.tscn
 res://scenes/player.tscn
-res://scripts/asteroid.gd
 res://scripts/game.gd
+res://scripts/asteroid.gd
+res://scenes/asteroid.tscn
+res://scenes/game.tscn
+res://scenes/hud.tscn
+res://scripts/hud.gd
+res://scripts/player.gd
+res://scenes/ui_life.tscn
+res://scenes/game_over_screen.tscn
+res://scripts/game_over_screen.gd

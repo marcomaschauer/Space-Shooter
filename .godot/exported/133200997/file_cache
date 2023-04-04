@@ -1,3 +1,10 @@
-res://scenes/game.tscn::a9ceee742912aafc1d7d2d469906c044::1680441817::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
-res://scenes/laser.tscn::0d16604bdd9e50c8bb1ae89e93263d22::1680441757::res://.godot/exported/133200997/export-7ea66689adea2f221421049858cbe224-laser.scn
-res://scenes/player.tscn::28565000e646fcdbc4a822245204c5b0::1680441758::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/game.tscn::f62ce852a9e138f2816bd258feef4817::1680614694::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/laser.tscn::6df26ff4963081998f2f5d1f000547b6::1680603123::res://.godot/exported/133200997/export-7ea66689adea2f221421049858cbe224-laser.scn
+res://scenes/player.tscn::28565000e646fcdbc4a822245204c5b0::1680613150::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://resources/asteroid_collisionshape_large.tres::d68217414194dd7d2ed974e6fad45d69::1680598722::res://.godot/exported/133200997/export-1e91e0c25b175a132d2891d605ba4268-asteroid_collisionshape_large.res
+res://resources/asteroid_collisionshape_medium.tres::cda9c03dc601de82fedbdf5ad733d1f1::1680598722::res://.godot/exported/133200997/export-e0efd35977a61362dc5da32bca765904-asteroid_collisionshape_medium.res
+res://resources/asteroid_collisionshape_small.tres::44ecf160fd37789945463e324fafef5a::1680598714::res://.godot/exported/133200997/export-429a1097fdb1f370ca4d3b7c10ca8f85-asteroid_collisionshape_small.res
+res://scenes/asteroid.tscn::ddab3ab55e9791d01cba965dc795fbe7::1680613150::res://.godot/exported/133200997/export-77e02d809253e7327db0f2ff299bab2a-asteroid.scn
+res://scenes/hud.tscn::9e88d7212e1fd42f1c72dc2c53cb2ebb::1680614686::res://.godot/exported/133200997/export-38bf74ff262409a94a41206b2b776d33-hud.scn
+res://scenes/game_over_screen.tscn::e36d2aeef3d864a3017449c3ac7be377::1680614686::res://.godot/exported/133200997/export-e22825d93e7ddd42eb50ee3deead56b6-game_over_screen.scn
+res://scenes/ui_life.tscn::c276029bbbf7c1a391f02786adbf77b7::1680613926::res://.godot/exported/133200997/export-160700c837056c2fbd8ad8184ca1ad7a-ui_life.scn

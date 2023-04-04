@@ -1,3 +1,10 @@
+Button
+Label
+HBoxContainer
+TextureRect
+Node2D
+Control
+CanvasLayer
 Node
 CollisionShape2D
 Sprite2D
