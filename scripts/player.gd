@@ -8,6 +8,7 @@ signal died
 
 @onready var muzzle = $Muzzle
 @onready var sprite = $Sprite2D
+@onready var cshape = $CollisionShape2D
 
 var laser_scene = preload("res://scenes/laser.tscn")
 
@@ -16,6 +17,8 @@ var rate_of_fire = 0.2
 var alive := true
 
 func _process(delta):
+	if !alive: return
+	
 	if Input.is_action_pressed("shoot"):
 		if !shoot_cooldown:
 			shoot_cooldown = true
@@ -24,6 +27,8 @@ func _process(delta):
 			shoot_cooldown = false
 
 func _physics_process(delta):
+	if !alive: return
+	
 	var input_vector := Vector2(0, Input.get_axis("move_forward", "move_backward"))
 	velocity  += input_vector.rotated(rotation) * acceleration
 	velocity = velocity.limit_length(max_speed)
@@ -58,9 +63,10 @@ func shoot_laser():
 func die():
 	if alive == true:
 		alive = false
-		emit_signal("died")
 		sprite.visible = false
-		process_mode = Node.PROCESS_MODE_DISABLED
+		#process_mode = Node.PROCESS_MODE_DISABLED
+		cshape.set_deferred("disabled", true)
+		emit_signal("died")
 
 func respawn(position):
 	if alive==false:
@@ -68,5 +74,6 @@ func respawn(position):
 		global_position = position
 		velocity = Vector2.ZERO
 		sprite.visible = true
-		process_mode = Node.PROCESS_MODE_INHERIT
+		#process_mode = Node.PROCESS_MODE_INHERIT
+		cshape.set_deferred("disabled", false)
 
