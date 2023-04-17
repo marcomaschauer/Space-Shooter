@@ -69,3 +69,4 @@ func respawn(position):
 		velocity = Vector2.ZERO
 		sprite.visible = true
 		process_mode = Node.PROCESS_MODE_INHERIT
+

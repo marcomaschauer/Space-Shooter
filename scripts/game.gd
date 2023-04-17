@@ -42,6 +42,8 @@ func _on_asteroid_exploded(position, size, points):
 				spawn_asteroid(position, Asteroid.AsteroidSize.SMALL)
 			Asteroid.AsteroidSize.SMALL:
 				pass
+	if (asteroids.get_child_count() < 8):
+		spawn_asteroid(Vector2(199, 796), Asteroid.AsteroidSize.LARGE) #WORK IN PROGRESS
 	
 func spawn_asteroid(position, size):
 	var a = asteroid_scene.instantiate()
@@ -49,6 +51,7 @@ func spawn_asteroid(position, size):
 	a.size = size
 	a.connect("exploded", _on_asteroid_exploded)
 	asteroids.call_deferred("add_child", a)
+	#print(position)
 
 func _on_player_died():
 	lives -= 1

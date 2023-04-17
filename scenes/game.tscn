@@ -25,15 +25,15 @@ position = Vector2(-2, -1)
 [node name="Asteroids" type="Node" parent="."]
 
 [node name="Asteroid" parent="Asteroids" instance=ExtResource("3_ddtqs")]
-position = Vector2(321, 215)
+position = Vector2(231, 187)
 
 [node name="Asteroid2" parent="Asteroids" instance=ExtResource("3_ddtqs")]
-position = Vector2(1022, 513)
-
-[node name="Asteroid3" parent="Asteroids" instance=ExtResource("3_ddtqs")]
-position = Vector2(259, 396)
+position = Vector2(1029, 243)
 
 [node name="Asteroid4" parent="Asteroids" instance=ExtResource("3_ddtqs")]
-position = Vector2(960, 240)
+position = Vector2(245, 521)
+
+[node name="Asteroid3" parent="Asteroids" instance=ExtResource("3_ddtqs")]
+position = Vector2(951, 534)
 
 [node name="PlayerSpawnPosition" type="Node2D" parent="."]
