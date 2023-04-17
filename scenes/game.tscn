@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5bqjbaw80aje"]
+[gd_scene load_steps=10 format=3 uid="uid://b5bqjbaw80aje"]
 
 [ext_resource type="PackedScene" uid="uid://b1iivp0oj8vja" path="res://scenes/player.tscn" id="1_ewp2l"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yqqqy"]
@@ -6,6 +6,43 @@
 [ext_resource type="PackedScene" uid="uid://dg8m4qvg6myd4" path="res://scenes/asteroid.tscn" id="3_ddtqs"]
 [ext_resource type="PackedScene" uid="uid://ddfvihsfgmpxn" path="res://scenes/game_over_screen.tscn" id="3_pntoi"]
 [ext_resource type="PackedScene" uid="uid://cc5ep5bforbj8" path="res://scenes/player_spawn_area.tscn" id="6_3jych"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ao2qy"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -10.0
+initial_velocity_max = -10.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_31pp3"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -20.0
+initial_velocity_max = -20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.0
+scale_max = 3.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rrcw6"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 360, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = -30.0
+initial_velocity_max = -30.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 5.0
+scale_max = 5.0
 
 [node name="Game" type="Node2D"]
 position = Vector2(625, 348)
@@ -41,3 +78,29 @@ position = Vector2(951, 534)
 
 [node name="PlayerSpawnArea" parent="PlayerSpawnPosition" instance=ExtResource("6_3jych")]
 position = Vector2(-3, 0)
+
+[node name="BackgroundStarFields" type="Node2D" parent="."]
+
+[node name="StarFieldBack" type="GPUParticles2D" parent="BackgroundStarFields"]
+z_index = -100
+position = Vector2(708, 15)
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_ao2qy")
+lifetime = 140.0
+preprocess = 280.0
+
+[node name="StarFieldMid" type="GPUParticles2D" parent="BackgroundStarFields"]
+z_index = -95
+position = Vector2(708, 15)
+amount = 250
+process_material = SubResource("ParticleProcessMaterial_31pp3")
+lifetime = 140.0
+preprocess = 280.0
+
+[node name="StarFieldFront" type="GPUParticles2D" parent="BackgroundStarFields"]
+z_index = -90
+position = Vector2(708, 15)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_rrcw6")
+lifetime = 140.0
+preprocess = 280.0
