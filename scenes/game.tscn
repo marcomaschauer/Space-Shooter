@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5bqjbaw80aje"]
+[gd_scene load_steps=7 format=3 uid="uid://b5bqjbaw80aje"]
 
 [ext_resource type="PackedScene" uid="uid://b1iivp0oj8vja" path="res://scenes/player.tscn" id="1_ewp2l"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yqqqy"]
 [ext_resource type="PackedScene" uid="uid://m1qkt6ac3p7i" path="res://scenes/hud.tscn" id="2_flhyo"]
 [ext_resource type="PackedScene" uid="uid://dg8m4qvg6myd4" path="res://scenes/asteroid.tscn" id="3_ddtqs"]
 [ext_resource type="PackedScene" uid="uid://ddfvihsfgmpxn" path="res://scenes/game_over_screen.tscn" id="3_pntoi"]
+[ext_resource type="PackedScene" uid="uid://cc5ep5bforbj8" path="res://scenes/player_spawn_area.tscn" id="6_3jych"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(625, 348)
@@ -28,7 +29,7 @@ position = Vector2(-2, -1)
 position = Vector2(231, 187)
 
 [node name="Asteroid2" parent="Asteroids" instance=ExtResource("3_ddtqs")]
-position = Vector2(1029, 243)
+position = Vector2(955, 184)
 
 [node name="Asteroid4" parent="Asteroids" instance=ExtResource("3_ddtqs")]
 position = Vector2(245, 521)
@@ -37,3 +38,6 @@ position = Vector2(245, 521)
 position = Vector2(951, 534)
 
 [node name="PlayerSpawnPosition" type="Node2D" parent="."]
+
+[node name="PlayerSpawnArea" parent="PlayerSpawnPosition" instance=ExtResource("6_3jych")]
+position = Vector2(-3, 0)

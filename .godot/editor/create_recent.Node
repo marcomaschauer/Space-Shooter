@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 Button
 Label
 HBoxContainer
@@ -6,6 +8,4 @@ Node2D
 Control
 CanvasLayer
 Node
-CollisionShape2D
 Sprite2D
-Area2D
