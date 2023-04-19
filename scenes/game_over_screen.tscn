@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddfvihsfgmpxn"]
+[gd_scene load_steps=6 format=3 uid="uid://ddfvihsfgmpxn"]
 
 [ext_resource type="FontFile" uid="uid://d2uqd303gphsy" path="res://assets/Bonus/kenvector_future.ttf" id="1_b0vju"]
 [ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_cd6tn"]
+[ext_resource type="FontFile" uid="uid://b74ildjfmmunb" path="res://assets/Bonus/kenvector_future_thin.ttf" id="3_c4c1m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tqlev"]
 font = ExtResource("1_b0vju")
 font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_0lnes"]
+font = ExtResource("3_c4c1m")
+font_size = 35
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -23,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.0
-offset_top = -96.0
-offset_right = 229.0
-offset_bottom = -21.0
+offset_left = -214.0
+offset_top = -144.0
+offset_right = 242.0
+offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "GAME OVER"
@@ -39,13 +44,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.0
-offset_right = 130.0
-offset_bottom = 53.0
+offset_left = -119.0
+offset_top = -48.0
+offset_right = 143.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_b0vju")
 theme_override_font_sizes/font_size = 40
 text = "TRY AGAIN"
+
+[node name="Leaderboard" type="Label" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 404.0
+offset_right = 528.0
+offset_bottom = 461.0
+label_settings = SubResource("LabelSettings_0lnes")
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

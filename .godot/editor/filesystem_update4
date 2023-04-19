@@ -1,5 +1,3 @@
 res://scenes/game.tscn
-res://scenes/player_spawn_area.tscn
-res://scripts/player_spawn_area.gd
 res://scripts/game.gd
-res://scripts/player.gd
+res://scenes/game_over_screen.tscn

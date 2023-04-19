@@ -5,6 +5,7 @@ extends Node2D
 @onready var asteroids = $Asteroids
 @onready var hud = $UI/HUD
 @onready var game_over_screen = $UI/GameOverScreen
+@onready var leaderboard = $UI/GameOverScreen/Leaderboard
 @onready var player_spawn_position = $PlayerSpawnPosition
 @onready var player_spawn_area = $PlayerSpawnPosition/PlayerSpawnArea
 
@@ -52,12 +53,13 @@ func spawn_asteroid(position, size):
 	a.size = size
 	a.connect("exploded", _on_asteroid_exploded)
 	asteroids.call_deferred("add_child", a)
-	#print(position)
 
 func _on_player_died():
 	lives -= 1
 	player.global_position = player_spawn_position.global_position
 	if lives <= 0:
+		save_score(hud.score.text)
+		leaderboard.set_text(str("Highscore: " + load_score()))
 		await get_tree().create_timer(2).timeout
 		game_over_screen.visible = true
 	else:
@@ -65,3 +67,15 @@ func _on_player_died():
 		while !player_spawn_area.is_empty:
 			await get_tree().create_timer(0.1).timeout
 		player.respawn(player_spawn_position.global_position)
+
+func save_score(content):
+	content = content.trim_prefix("SCORE: ")
+	var score_from_file = load_score()
+	if (content.to_int() > score_from_file.to_int()):
+		var file = FileAccess.open("user://save_game.dat", FileAccess.WRITE)
+		file.store_string(content)
+
+func load_score():
+	var file = FileAccess.open("user://save_game.dat", FileAccess.READ)
+	var content = file.get_as_text()
+	return content
